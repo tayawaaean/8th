@@ -191,8 +191,15 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const flowerContainer = document.querySelector('.flower-container');
-      
+      const maxFlowers = 20; // Maximum number of flowers on screen at once
+      const flowerInterval = 500; // Interval in milliseconds for creating new flowers
+  
       function createFlower() {
+        if (flowerContainer.children.length >= maxFlowers) {
+          // If the number of flowers exceeds the limit, exit the function
+          return;
+        }
+  
         const flower = document.createElement('div');
         flower.classList.add('flower');
         
@@ -207,11 +214,12 @@
           flower.remove();
         });
       }
-
+  
       // Generate flowers at intervals
-      setInterval(createFlower, 1000); // Adjust the interval for more or fewer flowers
+      setInterval(createFlower, flowerInterval);
     });
   </script>
+  
 
 </body>
 </html>
