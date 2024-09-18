@@ -1,0 +1,54 @@
+@layer utilities {
+    .bg-sakura { background-color: #FFC1E3; }
+    .text-teal { color: #00A7A7; }
+    .bg-teal { background-color: #00A7A7; }
+    .bg-teal-dark { background-color: #008585; }
+    .hover-transition { transition: all 0.3s ease; }
+  }
+  #why-i-love-you {
+    background: url('bg.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.8; /* To ensure it’s not too overpowering */
+  }
+  
+  /* Example for Playfair Display + Poppins */
+  body {
+      font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2, h3, .hero-title {
+      font-family: 'Playfair Display', serif;
+  }
+
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Flower animation styles */
+  .flower-container {
+      position: fixed; /* Fixed to stay in view */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1; /* Ensure it's behind other content */
+    }
+    .flower {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('assets/flower.png') no-repeat center center;
+      background-size: cover;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
